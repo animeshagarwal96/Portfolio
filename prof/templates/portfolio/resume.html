@@ -2,7 +2,18 @@
 {% block title %}Portfolio - Animesh Agarwal{% endblock %}
 {% block resume %}nav-bold{% endblock %}
 {% block css %}
+.img-thumbnail{
+  width: 70px;
+  height: 70px;
+  margin-bottom:10px;
+  border-radius:20%;
+  border: 3px solid #ececec;
+}
 
+.mypic{
+  width:400px;
+  height:350px;
+}
 {% endblock %}
 {% block body %}
     <!-- ======= Mobile nav toggle button ======= -->
@@ -13,6 +24,7 @@
 
     <nav class="nav-menu">
       <ul>
+        <li class="active"><img class="img-thumbnail" src="/media/img/myimage.jpg"></li>
         <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
@@ -46,7 +58,7 @@
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="/media/img/mypic.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>App Developer &amp; Web Developer.</h3>
@@ -169,6 +181,13 @@
               </div>
             </div>
 
+            <div class="progress">
+              <span class="skill">Linux <i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
           </div>
 
           <div class="col-lg-6">
@@ -255,6 +274,7 @@
               <p><em>Bhawanipur Education Society collage, Kolkata, India</em></p>
               <!-- <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p> -->
             </div>
+            <img src="/media/img/mypic2.jpg" class="img-fluid mypic" alt="">
           </div>
         </div>
 
@@ -507,7 +527,6 @@
   <script src="/media/vendor/jquery/jquery.min.js"></script>
   <script src="/media/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/media/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="/media/vendor/php-email-form/validate.js"></script>
   <script src="/media/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="/media/vendor/counterup/counterup.min.js"></script>
   <script src="/media/vendor/isotope-layout/isotope.pkgd.min.js"></script>
