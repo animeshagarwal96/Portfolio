@@ -62,10 +62,14 @@
                 <a class="nav-link px-md-3 nav-look {% block resume %} {% endblock %}" href="/resume">Profile</a>
                 <a class="nav-link px-md-3 nav-look {% block business %} {% endblock %}" href="/business">Business</a>
             </div>
+            {% if user.is_authenticated%}
+            <a class="btn btn-primary btn-sm rounded-pill mt-3 mt-md-0 ms-md-3 nav-bold" href="/logout">Logout</a>
+            {% else %}
             <!-- Button Login modal -->
             <a class="btn btn-primary btn-sm rounded-pill mt-3 mt-md-0 ms-md-3 nav-bold" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Login</a>
              <!-- Button SignUp modal -->
             <a class="btn btn-primary btn-sm rounded-pill mt-3 mt-md-0 ms-md-3 nav-bold" data-bs-toggle="modal" data-bs-target="#SignupModal" href="#">Sign Up</a>
+            {% endif %}
             
           </div>
           
@@ -80,14 +84,15 @@
                 </div>
                 <div class="modal-body">
                   <form method="POST" action="/login">
+                    {% csrf_token %}
                     <div class="mb-3">
                       <label for="email" class="form-label">Email address</label>
-                      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" name="Loginemail" id="email" aria-describedby="emailHelp">
                       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password">
+                      <input type="password" class="form-control" id="password" name="Loginpassword">
                     </div>
                     <div class="d-flex justify-content-center">
                       <button type="submit" class="btn btn-primary px-3">Submit</button>
@@ -109,26 +114,27 @@
               </div>
               <div class="modal-body">
                 <form method="POST" action="/signup">
+                  {% csrf_token %}
                   <div class="mb-3">
                     <i class="fas fa-user prefix grey-text"></i>
                     <label for="fname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="fname" name="fname">
+                    <input type="text" class="form-control" id="fname" name="fname" required>
                   </div>
                   <div class="mb-3">
                     <label for="lname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="lname" name="lname">
+                    <input type="text" class="form-control" id="lname" name="lname" required>
                   </div>
                   <div class="mb-3">
                     <label for="email1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" name="email1" id="email1">
+                    <input type="email" class="form-control" name="email1" id="email1" required>
                   </div>
                   <div class="mb-3">
                     <label for="password1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password1" name="password1">
+                    <input type="password" class="form-control" id="password1" name="password1" required>
                   </div>
                   <div class="mb-3">
                     <label for="password2" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="password2" name="password2">
+                    <input type="password" class="form-control" id="password2" name="password2" required>
                   </div>
                   <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary btn-md">Create Acount</button>
@@ -140,9 +146,20 @@
         </div>
       </div>
     </nav>
-      
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} mb-0 alert-dismissible fade show" role="alert">
+      <strong>Message: </strong> {{message}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
     {% block body %}{% endblock %}
     {% block js %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 </body>

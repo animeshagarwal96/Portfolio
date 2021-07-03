@@ -40,7 +40,7 @@
       <h1>Animesh Agarwal</h1>
       <p>I'm <span class="typed" data-typed-items="Web Developer, App Developer, Freelancer, Programmer"></span></p>
       <div class="social-links">
-        <a href="#" class="linkedin btn btn-primary btn-sm rounded-pill mt-3 mt-md-0 ms-md-3 nav-bold" ><i style="color:#fff;" class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/animesh-agarwal-7b7153147/" target="_blank" class="linkedin btn btn-primary btn-sm rounded-pill mt-3 mt-md-0 ms-md-3 nav-bold" ><i style="color:#fff;" class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -470,7 +470,8 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="/contactUs" method="post" role="form" class="php-email-form">
+            <form action="/contact" method="post" role="form" class="php-email-form">
+              {% csrf_token %}
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -512,7 +513,7 @@
       <h3>Animesh Agarwal</h3>
       <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
       <div class="social-links">
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/animesh-agarwal-7b7153147/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
         &copy; Copyright <strong><span>Resume</span></strong>. All Rights Reserved
