@@ -249,7 +249,19 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   background: url("../img/hero-bg1.jpg") top right no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
+}
+
+@media (max-width: 800px) {
+  #hero{
+    background: url("../img/mypic.jpg") top right no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .mylogo{
+    width: 200px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -257,6 +269,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 160px;
   }
 }
+
 
 #hero:before {
   content: "";

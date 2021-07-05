@@ -50,9 +50,11 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light py-3" aria-label="Main">
         <div class="container">
-          <a href="/" class="navbar-brand text-dark letter-spacing">
-            Animesh Consultancy Service
-          </a>
+          <div>
+            <a href="/" class="navbar-brand text-dark letter-spacing">
+              <img src="/media/img/icon.png" class="img-fluid mylogo">
+            </a>
+          </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbar">
             <div class="navbar-nav mt-3 mt-md-0 ms-auto">
@@ -155,6 +157,18 @@
     </div>
     {% endfor %}
     {% block body %}{% endblock %}
+    <footer id="footer">
+      <div class="container">
+        <h3>Animesh Agarwal</h3>
+        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/animesh-agarwal-7b7153147/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; Copyright <strong><span>Resume</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer><!-- End Footer -->
     {% block js %}{% endblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
